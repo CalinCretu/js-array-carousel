@@ -37,7 +37,9 @@ img {
 
 .image-list {}
 
-.image-list>* {
+.image-list>* {}
+
+.hidden {
   display: none;
 }
 
