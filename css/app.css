@@ -28,15 +28,22 @@ body {
 img {
   max-height: 100%;
   border-radius: 15px;
+}
+
+.img {
+  height: 600px;
+  width: 600px;
+}
+
+.image-list {}
+
+.image-list>* {
   display: none;
 }
 
-.gallery {
-  height: 600px;
-}
-
 .active {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .arrow-up,
@@ -73,12 +80,14 @@ button:active {
 }
 
 
-.top-btn {
-  left: 47%;
+#prev-slide {
+  left: 50%;
   top: 15%;
+  transform: translateX(-50%);
 }
 
-.bot-btn {
-  left: 47%;
+#next-slide {
+  left: 50%;
   bottom: 15%;
+  transform: translateX(-50%);
 }
