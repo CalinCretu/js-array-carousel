@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Patrick+Hand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dekko', cursive;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #220231;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 800px;
+}
+
+img {
+  max-height: 100%;
+  border-radius: 15px;
+  display: none;
+}
+
+.box {
+  height: 800px;
+}
+
+.active {
+  display: block;
+}
