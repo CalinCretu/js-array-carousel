@@ -1,51 +1,110 @@
-const images = [
+const imagesSrc = [
   'img/01.webp',
   'img/02.webp',
   'img/03.webp',
   'img/04.webp',
   'img/05.webp'
 ];
-const slider = document.querySelector('.image-list');
-let currentImage = 0;
-console.log(currentImage)
 
-function changeImage(index) {
-  let image = slider.querySelector('.hidden:nth-child(1)');
-  image.src = images[index];
-  image.classList.add('active');
-  image.classList.remove('hidden');
-  console.log(images[index])
+const carouselDOMElement = document.querySelector('.image-list')
+console.log(carouselDOMElement)
+
+
+for (let i = 0; i < imagesSrc.length; i++) {
+  console.log(i)
+  const src = imagesSrc[i]
+  const html = `<img class="carousel__item" src="${src}" alt="" />`
+
+  carouselDOMElement.innerHTML += html;
+  console.log(carouselDOMElement)
 }
+// recuperando dal DOM tutte leimmagini stampate nel ciclo for
+const itemDOMElements = document.querySelectorAll('.carousel__item');
+// memorizzando lo stato del carosello (indice della slide attiva)
+let currentIndex = 0;
+//aggiungendo la classe active alla slie attiva
+let currentSlide = itemDOMElements[currentIndex]
+currentSlide.classList.add('active');
 
-for (let i = 0; i < images.length; i++) {
-  const img = document.createElement('img');
-  img.src = images[i];
-  img.classList.add('hidden');
-  slider.appendChild(img);
-}
+const arrowsTop = document.getElementById('.prev-slide');
+const arrowBottom = document.getElementById('.next-slide');
 
-let firstImage = slider.querySelector('.hidden:nth-child(1)');
-firstImage.classList.remove("hidden");
-console.log(firstImage)
+arrowBottom.addEventListener('click', function () {
 
-const prevButton = document.getElementById('prev-slide');
-prevButton.addEventListener('click', function () {
-  currentImage--;
-  console.log(currentImage)
-  if (currentImage < 0) {
-    currentImage = images.length - 1;
-  }
-  changeImage(currentImage);
-});
+  // prendere la slide attiva
+  //togliere la classe acticve alla slide attiva
+  //prendere al slide successiva
+  //togliere aggiungere alla slide successiva la classe active
+  //incrementare il valore di currentIndex
+})
 
-const nextButton = document.getElementById('next-slide');
-nextButton.addEventListener('click', function () {
-  currentImage++;
-  if (currentImage >= images.length) {
-    currentImage = 0;
-  }
-  changeImage(currentImage);
-});
+arrowBottom.addEventListener('click', function () {
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const slider = document.querySelector('.image-list');
+// let currentImage = 0;
+// console.log(currentImage)
+
+// function changeImage(index) {
+//   let image = slider.querySelector('.hidden:nth-child(1)');
+//   image.src = images[index];
+//   image.classList.add('active');
+//   image.classList.remove('hidden');
+//   console.log(images[index])
+// }
+
+// for (let i = 0; i < images.length; i++) {
+//   const img = document.createElement('img');
+//   img.src = images[i];
+//   img.classList.add('hidden');
+//   slider.appendChild(img);
+// }
+
+// let firstImage = slider.querySelector('.hidden:nth-child(1)');
+// firstImage.classList.remove("hidden");
+// console.log(firstImage)
+
+// const prevButton = document.getElementById('prev-slide');
+// prevButton.addEventListener('click', function () {
+//   currentImage--;
+//   console.log(currentImage)
+//   if (currentImage < 0) {
+//     currentImage = images.length - 1;
+//   }
+//   changeImage(currentImage);
+// });
+
+// const nextButton = document.getElementById('next-slide');
+// nextButton.addEventListener('click', function () {
+//   currentImage++;
+//   if (currentImage >= images.length) {
+//     currentImage = 0;
+//   }
+//   changeImage(currentImage);
+// });
 
 
 

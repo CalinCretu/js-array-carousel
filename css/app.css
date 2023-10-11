@@ -28,19 +28,27 @@ body {
 img {
   max-height: 100%;
   border-radius: 15px;
+
 }
 
 .img {
-  height: 600px;
-  width: 600px;
+  max-height: 100%;
 }
 
-.image-list {}
+.image-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 600px
+}
 
-.image-list>* {}
-
-.hidden {
+.image-list>* {
   display: none;
+}
+
+.active {
+  display: block;
 }
 
 .active {
@@ -63,6 +71,7 @@ button {
   background-color: #220231;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
 }
 
 button:hover {
