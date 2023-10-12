@@ -26,20 +26,36 @@ let currentIndex = 0;
 let currentSlide = itemDOMElements[currentIndex]
 currentSlide.classList.add('active');
 
-const arrowsTop = document.getElementById('.prev-slide');
-const arrowBottom = document.getElementById('.next-slide');
+const arrowTop = document.getElementById('prev-slide');
+const arrowBottom = document.getElementById('next-slide');
 
 arrowBottom.addEventListener('click', function () {
 
-  // prendere la slide attiva
-  //togliere la classe acticve alla slide attiva
-  //prendere al slide successiva
-  //togliere aggiungere alla slide successiva la classe active
-  //incrementare il valore di currentIndex
+   //prendere al slide successiva
+   const nextSlideElement = itemDOMElements[currentIndex + 1];
+   if (nextSlideElement){
+ // prendere la slide attiva
+ const activeSlideElement = itemDOMElements[currentIndex];
+ console.log(currentIndex)
+ //togliere la classe acticve alla slide attiva
+ activeSlideElement.classList.remove('active')
+
+ //togliere aggiungere alla slide successiva la classe active
+ nextSlideElement.classList.add('active');
+ //incrementare il valore di currentIndex
+ currentIndex++
+   }
+ 
 })
 
-arrowBottom.addEventListener('click', function () {
-
+arrowTop.addEventListener('click', function () {
+  const prevSlideElement = itemDOMElements[currentIndex - 1];
+  if(prevSlideElement){
+    const activeSlideElement = itemDOMElements[currentIndex];
+    activeSlideElement.classList.remove('active');
+    prevSlideElement.classList.add('active');
+    currentIndex--
+  }
 })
 
 
