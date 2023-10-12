@@ -64,6 +64,10 @@ arrowBottom.addEventListener('click', function () {
 
 
 
+
+
+
+
 // const slider = document.querySelector('.image-list');
 // let currentImage = 0;
 // console.log(currentImage)
